@@ -1,4 +1,4 @@
-package org.example;
+package org.pokeService;
 import java.util.List;
 
 public class Location {

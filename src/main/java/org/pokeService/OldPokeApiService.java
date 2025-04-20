@@ -1,24 +1,24 @@
-package org.example;
+package org.pokeService;
 
 import reactor.core.publisher.Mono;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.reactive.function.client.WebClient;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class App implements CommandLineRunner {
+//@SpringBootApplication
+public class OldPokeApiService  implements CommandLineRunner {
     private final WebClient webClient;
 
     // Injeção do WebClient.Builder pelo Spring Boot
-    public App(WebClient.Builder webClientBuilder) {
+    public OldPokeApiService(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder
                 .baseUrl("https://pokeapi.co/api/v2")
                 .build();
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(OldPokeApiService.class, args);
     }
 
     @Override
